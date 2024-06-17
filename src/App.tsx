@@ -10,6 +10,7 @@ export interface TurnTableData {
   icon: string;
   result_img: string;
   rate: number; //中奖率
+  title: string;
   message: string;
   min?: number;
   max?: number;

@@ -92,8 +92,8 @@ const TurnTable: FC<ITurnTableProps> = ({ turntable }) => {
       // 4.显示中奖结果
       const newDialog: Partial<IDialog> = {};
       if (Number(randomRes.type) === turntableSuccess) {
-        newDialog.title = randomRes.message;
-        newDialog.resultText = '要听话奥';
+        newDialog.title = randomRes.title;
+        newDialog.resultText = randomRes.message;
         newDialog.destoryTime = 5;
       } else {
         newDialog.title = '没抽中';
