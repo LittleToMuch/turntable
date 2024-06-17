@@ -71,16 +71,16 @@ const TurnTable: FC<ITurnTableProps> = ({ turntable }) => {
     let randomRes = turntable.filter(
       item => randomNum > item.min! && randomNum <= item.max!,
     )[0];
-    // 若中奖没有中奖图片，则为未中奖
-    if (Number(randomRes.type) === turntableSuccess && !randomRes.result_img) {
-      randomRes = turntable.filter(
-        item => Number(item.type) === turntableFail,
-      )[0];
-    }
+    // // 若中奖没有中奖图片，则为未中奖
+    // if (Number(randomRes.type) === turntableSuccess && !randomRes.result_img) {
+    //   randomRes = turntable.filter(
+    //     item => Number(item.type) === turntableFail,
+    //   )[0];
+    // }
 
     // 2. 计算旋转角度，多转5圈，一圈用时1秒
     const itemDeg = (randomRes.location - 1) * (360 / turntable.length); // 第一个不用转
-    const rotate = itemDeg + 5 * 360;
+    const rotate = (360 - itemDeg) + 5 * 360;
     const speed = (itemDeg / 360 + 5).toFixed(2);
     turntableEl.style[transformJs] = `rotate(${rotate}deg)`;
     turntableEl.style[transition] = `${transformCss} ${speed}s ease-out`;

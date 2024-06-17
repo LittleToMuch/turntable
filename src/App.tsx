@@ -25,14 +25,12 @@ export const App = (): JSX.Element => {
       setLoading(false);
     }, 500);
   }, []);
-  console.log(turntable, 'turntable');
 
   if (loading) {
     return <div className="loading">正在努力加载</div>;
   }
   return (
     <div className="app">
-      haha
       <Header />
       <Turntable turntable={turntable} />
       {/* <Rule rule={rule}/> */}

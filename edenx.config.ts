@@ -8,6 +8,9 @@ export default defineConfig({
         rootValue: 108,
       },
     },
+    distPath: {
+      image: 'turntable/static/image',
+    }
   },
   plugins: [
     appTools({
