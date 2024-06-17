@@ -26,7 +26,8 @@
       "js": "static/js",
       "css": "static/css",
       "server": "bundles",
-      "worker": "worker"
+      "worker": "worker",
+      "image": "turntable/static/image"
     },
     "cleanDistPath": true,
     "disableNodePolyfill": true,
@@ -190,6 +191,9 @@
         "pxtorem": {
           "rootValue": 108
         }
+      },
+      "distPath": {
+        "image": "turntable/static/image"
       }
     },
     "plugins": [
