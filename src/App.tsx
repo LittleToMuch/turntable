@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import json from './api/turntable.js';
 import Turntable from './components/turn-table';
 import Header from './components/header';
+import Rule from './components/rule';
 
 export interface TurnTableData {
   location: number;
@@ -34,7 +35,7 @@ export const App = (): JSX.Element => {
     <div className="app">
       <Header />
       <Turntable turntable={turntable} />
-      {/* <Rule rule={rule}/> */}
+      <Rule />
     </div>
   );
 };
