@@ -5,13 +5,11 @@ import { IDialog } from '../turn-table';
 
 interface IDialogProps {
   dialog: IDialog;
+  onDestory: () => void;
 }
 
-const Dialog: FC<IDialogProps> = ({ dialog }) => {
+const Dialog: FC<IDialogProps> = ({ dialog, onDestory }) => {
   const { show, title, resultImg, resultText, destoryTime } = dialog;
-  useEffect(() => {
-    // your code
-  }, []);
 
   return (
     <div className="dialog-wrap">
@@ -28,7 +26,9 @@ const Dialog: FC<IDialogProps> = ({ dialog }) => {
             <img className="img" src={resultImg} alt="" />
             <span className="text">{resultText}</span>
           </div>
-          {/* <button className="btn">{destoryTime}s 返回页面</button> */}
+          <button className="btn" onClick={onDestory}>
+            {destoryTime}s 返回页面
+          </button>
         </div>
       </CSSTransition>
     </div>

@@ -1,3 +1,10 @@
+// import yellow from '../assets/pictures/yellow.jpg';
+import black from '../assets/pictures/black.jpg';
+import pink from '../assets/pictures/pink.jpg';
+import red from '../assets/pictures/red.jpg';
+import flower from '../assets/pictures/flower.jpg';
+import birthday from '../assets/pictures/birthday.jpg';
+import samoye2 from '../assets/pictures/samoye2.png';
 export default {
   tp_id: 1,
   logo: '',
@@ -7,50 +14,50 @@ export default {
     {
       location: 1, // 位置 1-6
       type: 1, // 抽奖类型 1：活动 2：未中奖
-      icon: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1406236855,840809371&fm=26&gp=0.jpg', // 转盘上的图片
-      result_img:
-        'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4022536995,359514895&fm=26&gp=0.jpg', // 中奖结果图片
-      rate: 90, // 中奖概率 1-100
+      icon: red, // 转盘上的图片
+      result_img: red, // 中奖结果图片
+      rate: 10, // 中奖概率 1-100
+      message: '要上班😭，吃醋',
     },
     {
       location: 2, // 位置 1-6
-      type: 2, // 抽奖类型 1：活动 2：未中奖
-      icon: '', // 转盘上的图片
-      result_img:
-        'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2027419133,3685143289&fm=26&gp=0.jpg', // 中奖结果图片
-      rate: 20, // 中奖概率 1-100
+      type: 1, // 抽奖类型 1：活动 2：未中奖
+      icon: black, // 转盘上的图片
+      result_img: black, // 中奖结果图片
+      rate: 10, // 中奖概率 1-100
+      message: '要上班😭，吃醋',
     },
     {
       location: 3, // 位置 1-6
       type: 1, // 抽奖类型 1：活动 2：未中奖
-      icon: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1406236855,840809371&fm=26&gp=0.jpg', // 转盘上的图片
-      result_img:
-        'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4022536995,359514895&fm=26&gp=0.jpg', // 中奖结果图片
-      rate: 20, // 中奖概率 1-100
+      icon: pink, // 转盘上的图片
+      result_img: pink, // 中奖结果图片
+      rate: 10, // 中奖概率 1-100
+      message: '要上班😭，吃醋',
     },
     {
       location: 4, // 位置 1-6
-      type: 2, // 抽奖类型 1：活动 2：未中奖
-      icon: '', // 转盘上的图片
-      result_img:
-        'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2027419133,3685143289&fm=26&gp=0.jpg', // 中奖结果图片
-      rate: 20, // 中奖概率 1-100
+      type: 1, // 抽奖类型 1：活动 2：未中奖
+      icon: samoye2, // 转盘上的图片
+      result_img: samoye2, // 中奖结果图片
+      rate: 50, // 中奖概率 1-100
+      message: '宝贝要休息，么么哒',
     },
     {
       location: 5, // 位置 1-6
       type: 1, // 抽奖类型 1：活动 2：未中奖
-      icon: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1406236855,840809371&fm=26&gp=0.jpg', // 转盘上的图片
-      result_img:
-        'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4022536995,359514895&fm=26&gp=0.jpg', // 中奖结果图片
+      icon: flower, // 转盘上的图片
+      result_img: flower, // 中奖结果图片
       rate: 10, // 中奖概率 1-100
+      message: '要上班😭，吃醋',
     },
     {
       location: 6, // 位置 1-6
       type: 1, // 抽奖类型 1：活动 2：未中奖
-      icon: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1406236855,840809371&fm=26&gp=0.jpg', // 转盘上的图片
-      result_img:
-        'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4022536995,359514895&fm=26&gp=0.jpg', // 中奖结果图片
+      icon: birthday, // 转盘上的图片
+      result_img: birthday, // 中奖结果图片
       rate: 10, // 中奖概率 1-100
+      message: '要上班😭，吃醋',
     },
   ],
 };

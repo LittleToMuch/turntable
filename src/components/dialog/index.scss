@@ -54,7 +54,7 @@ $color-white: #fbfafa;
     }
     .main {
       width: 100%;
-      height: 334px;
+      height: 100%;
       background: url('../../assets/img/dialog-bg.png') center center;
       background-size: 100% 100%;
       display: flex;
@@ -63,7 +63,6 @@ $color-white: #fbfafa;
       align-items: center;
       .img {
         width: 250px;
-        height: 250px;
         border-radius: 3px;
       }
       .text {

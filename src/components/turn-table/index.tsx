@@ -1,8 +1,9 @@
 import { TurnTableData } from '@/App';
-import React, { FC, memo, useState } from 'react';
+import React, { FC, memo, useRef, useState } from 'react';
 import './index.scss';
 import Dialog from '../dialog';
 import { prefixStyle } from '../../assets/js/dom';
+import { Modal } from '@douyinfe/semi-ui';
 
 const transformCss = prefixStyle('transform-css');
 const transformJs = prefixStyle('transform-js');
@@ -25,6 +26,7 @@ const turntableSuccess = 1;
 const turntableFail = 2;
 
 const TurnTable: FC<ITurnTableProps> = ({ turntable }) => {
+  const ref = useRef(null);
   const [dialog, setDialog] = useState<IDialog>({
     show: false,
     title: '',
@@ -34,6 +36,19 @@ const TurnTable: FC<ITurnTableProps> = ({ turntable }) => {
   });
   const [isGoing, setIsGoing] = useState(false);
 
+  const countDown = (dialog: IDialog) => {
+    const { destoryTime } = dialog;
+    let time = destoryTime;
+    const timer = setInterval(() => {
+      time--;
+      setDialog(prev => ({ ...prev, destoryTime: time }));
+      if (time <= 0) {
+        clearInterval(timer);
+        setDialog(prev => ({ ...prev, show: false }));
+      }
+    }, 1000);
+  };
+
   const gameStart = () => {
     if (!turntable.length) {
       return;
@@ -42,7 +57,7 @@ const TurnTable: FC<ITurnTableProps> = ({ turntable }) => {
       return;
     }
     setIsGoing(true);
-    setDialog(prev => ({ ...prev, show: true }));
+    setDialog(prev => ({ ...prev, show: false }));
     const turntableEl: HTMLDivElement = document.querySelector('#turntable')!;
 
     // 1. 随机生成中奖结果
@@ -77,8 +92,8 @@ const TurnTable: FC<ITurnTableProps> = ({ turntable }) => {
       // 4.显示中奖结果
       const newDialog: Partial<IDialog> = {};
       if (Number(randomRes.type) === turntableSuccess) {
-        newDialog.title = '中奖啦';
-        newDialog.resultText = '请扫码领取';
+        newDialog.title = randomRes.message;
+        newDialog.resultText = '要听话奥';
         newDialog.destoryTime = 5;
       } else {
         newDialog.title = '没抽中';
@@ -88,7 +103,7 @@ const TurnTable: FC<ITurnTableProps> = ({ turntable }) => {
       newDialog.show = true;
       newDialog.resultImg = randomRes.result_img;
       setDialog(newDialog as IDialog);
-      // this.refs.dialog.countDown(); // 倒计时
+      countDown(newDialog as IDialog);
 
       // 中奖结果执行结束，可重新进行抽奖操作
       setTimeout(() => {
@@ -96,6 +111,7 @@ const TurnTable: FC<ITurnTableProps> = ({ turntable }) => {
         turntableEl.removeEventListener(transitionend, runEnd);
       }, newDialog.destoryTime);
     };
+    console.log(transitionend, 'transitionend');
     turntableEl.addEventListener(transitionend, runEnd, false);
   };
 
@@ -116,7 +132,13 @@ const TurnTable: FC<ITurnTableProps> = ({ turntable }) => {
         <div className="decorate1" />
         <div className="decorate2" />
       </div>
-      {/* <Dialog dialog={dialog} /> */}
+      <Dialog
+        dialog={dialog}
+        onDestory={() => {
+          setDialog(prev => ({ ...prev, show: false }));
+          setIsGoing(false);
+        }}
+      />
     </div>
   );
 };
