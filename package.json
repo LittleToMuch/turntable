@@ -32,24 +32,27 @@
     "stories"
   ],
   "dependencies": {
+    "lib-flexible": "^0.3.2",
     "react": "~18.2.0",
-    "react-dom": "~18.2.0"
+    "react-dom": "~18.2.0",
+    "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
-    "@edenx/app-tools": "1.53.0",
-    "@edenx/tsconfig": "1.53.0",
     "@byted/eslint-config-standard": "^3.1.1",
     "@byted/eslint-config-standard-react": "^2.1.1",
-    "eslint-plugin-prettier": "~4.2.1",
-    "eslint": "^8.57.0",
-    "lint-staged": "~13.1.0",
-    "prettier": "~2.8.1",
-    "husky": "~8.0.1",
-    "typescript": "~5.0.4",
+    "@byted/eslint-config-standard-ts": "^3.1.1",
+    "@edenx/app-tools": "1.53.0",
+    "@edenx/tsconfig": "1.53.0",
     "@types/node": "~16.11.7",
     "@types/react": "~18.2.22",
     "@types/react-dom": "~18.2.7",
-    "@byted/eslint-config-standard-ts": "^3.1.1",
-    "rimraf": "~3.0.2"
+    "@types/react-transition-group": "^4.4.10",
+    "eslint": "^8.57.0",
+    "eslint-plugin-prettier": "~4.2.1",
+    "husky": "~8.0.1",
+    "lint-staged": "~13.1.0",
+    "prettier": "~2.8.1",
+    "rimraf": "~3.0.2",
+    "typescript": "~5.0.4"
   }
 }

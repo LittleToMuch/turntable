@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { App } from './App';
+import 'lib-flexible/flexible.js';
 
 const rootDOM = document.getElementById('root');
 
