@@ -26,8 +26,7 @@
       "js": "static/js",
       "css": "static/css",
       "server": "bundles",
-      "worker": "worker",
-      "image": "turntable/static/image"
+      "worker": "worker"
     },
     "cleanDistPath": true,
     "disableNodePolyfill": true,
@@ -37,7 +36,8 @@
       "pxtorem": {
         "rootValue": 108
       }
-    }
+    },
+    "assetPrefix": "/turntable"
   },
   "server": {
     "baseUrl": "/",
@@ -192,9 +192,7 @@
           "rootValue": 108
         }
       },
-      "distPath": {
-        "image": "turntable/static/image"
-      }
+      "assetPrefix": "/turntable"
     },
     "plugins": [
       "[Circular 0]"
