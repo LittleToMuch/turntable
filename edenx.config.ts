@@ -8,9 +8,10 @@ export default defineConfig({
         rootValue: 108,
       },
     },
-    distPath: {
-      image: 'turntable/static/image',
-    }
+    // distPath: {
+    //   // image: 'turntable/static/image',
+    // },
+    assetPrefix: '/turntable'
   },
   plugins: [
     appTools({
