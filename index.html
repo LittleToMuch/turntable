@@ -13,6 +13,33 @@
     <meta name="imagemode" content="force" />
     <meta name="wap-font-scale" content="no" />
     <meta name="format-detection" content="telephone=no" />
+    <script>
+      function setRootPixel() {
+        function n() {
+          var n = document.documentElement,
+            i =
+              (50 *
+                (window.innerWidth && n.clientWidth
+                  ? Math.min(window.innerWidth, n.clientWidth)
+                  : window.innerWidth ||
+                    n.clientWidth ||
+                    (document.body && document.body.clientWidth) ||
+                    375)) /
+              375;
+          (i = Math.min(i, 64)),
+            (window.ROOT_FONT_SIZE = i),
+            (n.style.fontSize = i + "px");
+        }
+        function i(i) {
+          i ? n() : setTimeout(n, 30);
+        }
+        i(!0),
+          window.addEventListener("resize", i, !1),
+          "onorientationchange" in window &&
+            window.addEventListener("orientationchange", i, !1);
+      }
+      "undefined" != typeof window && setRootPixel();
+    </script>
     <script defer="defer">
       (() => {
         "use strict";
@@ -30,14 +57,14 @@
           (n.O = (e, t, o, i) => {
             if (!t) {
               var a = 1 / 0;
-              for (f = 0; f < r.length; f++) {
-                for (var [t, o, i] = r[f], l = !0, s = 0; s < t.length; s++)
+              for (s = 0; s < r.length; s++) {
+                for (var [t, o, i] = r[s], l = !0, f = 0; f < t.length; f++)
                   (!1 & i || a >= i) &&
-                  Object.keys(n.O).every((r) => n.O[r](t[s]))
-                    ? t.splice(s--, 1)
+                  Object.keys(n.O).every((r) => n.O[r](t[f]))
+                    ? t.splice(f--, 1)
                     : ((l = !1), i < a && (a = i));
                 if (l) {
-                  r.splice(f--, 1);
+                  r.splice(s--, 1);
                   var u = o();
                   void 0 !== u && (e = u);
                 }
@@ -45,9 +72,15 @@
               return e;
             }
             i = i || 0;
-            for (var f = r.length; f > 0 && r[f - 1][2] > i; f--)
-              r[f] = r[f - 1];
-            r[f] = [t, o, i];
+            for (var s = r.length; s > 0 && r[s - 1][2] > i; s--)
+              r[s] = r[s - 1];
+            r[s] = [t, o, i];
+          }),
+          (n.d = (r, e) => {
+            for (var t in e)
+              n.o(e, t) &&
+                !n.o(r, t) &&
+                Object.defineProperty(r, t, { enumerable: !0, get: e[t] });
           }),
           (n.g = (function () {
             if ("object" == typeof globalThis) return globalThis;
@@ -64,15 +97,15 @@
             var e = (e, t) => {
                 var o,
                   i,
-                  [a, l, s] = t,
+                  [a, l, f] = t,
                   u = 0;
                 if (a.some((e) => 0 !== r[e])) {
                   for (o in l) n.o(l, o) && (n.m[o] = l[o]);
-                  if (s) var f = s(n);
+                  if (f) var s = f(n);
                 }
                 for (e && e(t); u < a.length; u++)
                   (i = a[u]), n.o(r, i) && r[i] && r[i][0](), (r[i] = 0);
-                return n.O(f);
+                return n.O(s);
               },
               t = (self.webpackChunkturntable =
                 self.webpackChunkturntable || []);
@@ -80,10 +113,10 @@
           })();
       })();
     </script>
-    <script defer="defer" src="./static/js/lib-polyfill.e67f527d.js"></script>
+    <script defer="defer" src="./static/js/lib-polyfill.ca59e54a.js"></script>
     <script defer="defer" src="./static/js/lib-react.f3c062b5.js"></script>
-    <script defer="defer" src="./static/js/main.88ab8cb9.js"></script>
-    <link href="./static/css/main.590d994a.css" rel="stylesheet" />
+    <script defer="defer" src="./static/js/main.8ef7e42c.js"></script>
+    <link href="./static/css/main.179923d5.css" rel="stylesheet" />
   </head>
   <body>
     <div id="root"><!--<?- html ?>--></div>

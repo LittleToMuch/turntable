@@ -31,7 +31,12 @@
     "cleanDistPath": true,
     "disableNodePolyfill": true,
     "enableInlineRouteManifests": true,
-    "disableInlineRouteManifests": false
+    "disableInlineRouteManifests": false,
+    "convertToRem": {
+      "pxtorem": {
+        "rootValue": 108
+      }
+    }
   },
   "server": {
     "baseUrl": "/",
@@ -180,6 +185,13 @@
     }
   },
   "_raw": {
+    "output": {
+      "convertToRem": {
+        "pxtorem": {
+          "rootValue": 108
+        }
+      }
+    },
     "plugins": [
       "[Circular 0]"
     ]
